@@ -20,7 +20,7 @@ This repository contains various UI slicing projects built with pure HTML, CSS/S
 ## 📂 Project Structure
 
 ```
-portfolio/
+root/
 ├── css/              # Compiled CSS files
 ├── scss/             # SCSS source files
 ├── html/             # HTML pages
