@@ -802,73 +802,6 @@ body {
           }
         }
       }
-      .modal {
-        padding: 20px;
-      }
-      .modal-dialog {
-        max-width: 100%;
-        margin: 0;
-        &.modal-dialog-scrollable {
-          height: 100%;
-        }
-        .modal-content {
-          height: 100%;
-          border-radius: 12px;
-          .modal-header {
-            background: transparent;
-            box-shadow: none;
-            position: fixed;
-            top: 20px;
-            right: 16px;
-            z-index: 1000;
-            width: 100%;
-            border: none;
-            padding: 20px 30px;
-            h5 {
-              text-align: center;
-            }
-            .btn-close {
-              background-color: white;
-            }
-          }
-          .modal-body {
-            padding: 0;
-            .modal-img {
-              width: 100%;
-              height: auto;
-              img {
-                position: initial;
-                width: 100%;
-                height: auto;
-                transform: translate(0);
-              }
-            }
-            .modal-btn {
-              position: fixed;
-              width: calc(100% - 40px);
-              bottom: 20px;
-              left: 21px;
-              border-radius: 0 0 12px 12px;
-              text-align: center;
-              background: rgba(255, 255, 255, 0.65);
-              box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-              backdrop-filter: blur(6px);
-              -webkit-backdrop-filter: blur(6px);
-              padding: 6px 0;
-            }
-          }
-        }
-      }
-      .modal-mega {
-        .modal-body {
-          background-color: #f3f2ff;
-        }
-      }
-      .modal-sinopac {
-        .modal-content .modal-body .modal-btn {
-          background-color: rgba(0, 0, 0, 0.65);
-        }
-      }
     }
     &:nth-child(2) {
       .works-box {
@@ -928,26 +861,6 @@ body {
       &:first-child {
         .works-box:first-child {
           padding-top: 30px;
-        }
-      }
-      .works-project {
-        .modal {
-          padding: 12px;
-        }
-        .modal-dialog {
-          .modal-content {
-            .modal-header {
-              top: 8px;
-              right: 4px;
-            }
-            .modal-body {
-              .modal-btn {
-                width: calc(100% - 24px);
-                bottom: 12px;
-                left: 12px;
-              }
-            }
-          }
         }
       }
     }
@@ -1127,6 +1040,94 @@ body {
     }
     .contact-pic {
       transform: translateY(0);
+    }
+  }
+}
+
+.modal {
+  padding: 20px;
+}
+.modal-dialog {
+  max-width: 100%;
+  margin: 0;
+  &.modal-dialog-scrollable {
+    height: 100%;
+  }
+  .modal-content {
+    height: 100%;
+    border-radius: 12px;
+    .modal-header {
+      background: transparent;
+      box-shadow: none;
+      position: fixed;
+      top: 20px;
+      right: 16px;
+      z-index: 1000;
+      width: 100%;
+      border: none;
+      padding: 20px 30px;
+      h5 {
+        text-align: center;
+      }
+      .btn-close {
+        background-color: white;
+      }
+    }
+    .modal-body {
+      padding: 0;
+      .modal-img {
+        width: 100%;
+        height: auto;
+        img {
+          position: initial;
+          width: 100%;
+          height: auto;
+          transform: translate(0);
+        }
+      }
+      .modal-btn {
+        position: fixed;
+        width: calc(100% - 40px);
+        bottom: 20px;
+        left: 21px;
+        border-radius: 0 0 12px 12px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        padding: 6px 0;
+      }
+    }
+  }
+}
+.modal-mega {
+  .modal-body {
+    background-color: #f3f2ff;
+  }
+}
+.modal-sinopac {
+  .modal-content .modal-body .modal-btn {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+}
+@include media-breakpoint-down(sm) {
+  .modal {
+    padding: 12px;
+  }
+  .modal-dialog {
+    .modal-content {
+      .modal-header {
+        top: 8px;
+        right: 4px;
+      }
+      .modal-body {
+        .modal-btn {
+          width: calc(100% - 24px);
+          bottom: 12px;
+          left: 12px;
+        }
+      }
     }
   }
 }
