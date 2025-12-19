@@ -955,52 +955,6 @@ input.form-control.disabled {
 }
 
 /* bootstrap: textarea -------------------- */
-textarea,
-textarea.form-control {
-  height: auto;
-  border-radius: 0;
-  border: none;
-  border-bottom: solid 1px #242424;
-  padding: 8px 12px 8px 0;
-  color: #333333;
-  width: 100%;
-  max-width: none;
-}
-textarea:hover, textarea:focus,
-textarea.form-control:hover,
-textarea.form-control:focus {
-  border: none;
-  border-bottom: solid 1px #e6266e;
-}
-textarea:focus,
-textarea.form-control:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder {
-  color: #c8c8c8;
-}
-textarea::-moz-placeholder, textarea.form-control::-moz-placeholder {
-  color: #c8c8c8;
-}
-textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder {
-  color: #c8c8c8;
-}
-textarea::-ms-input-placeholder, textarea.form-control::-ms-input-placeholder {
-  color: #c8c8c8;
-}
-textarea::placeholder,
-textarea.form-control::placeholder {
-  color: #c8c8c8;
-}
-textarea:disabled, textarea.disabled,
-textarea.form-control:disabled,
-textarea.form-control.disabled {
-  background-color: #c8c8c8;
-  border-color: #c8c8c8;
-  color: #333333;
-  -webkit-text-fill-color: #333333;
-}
 @media (max-width: 575.98px) {
   textarea,
   textarea.form-control {
