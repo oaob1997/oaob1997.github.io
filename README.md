@@ -2,6 +2,10 @@
 
 A collection of front-end UI implementations and layout projects, demonstrating responsive design and modern styling techniques.
 
+## 🌐 Live Demo
+
+[View Live Demo](https://oaob1997.github.io/html)
+
 ## 📖 About
 
 This repository contains various UI slicing projects built with pure HTML, CSS/SCSS, and JavaScript. Each project focuses on translating design mockups into functional, responsive web layouts with attention to detail and best practices.
@@ -44,7 +48,3 @@ portfolio/
 - JavaScript DOM manipulation
 - Web accessibility basics
 - Version control with Git
-
-## 🌐 Live Demo
-
-[View Live Demo](https://oaob1997.github.io/ui-slicing-showcase)
