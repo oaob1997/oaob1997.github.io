@@ -1,0 +1,175 @@
+$input-red-color: $red-500; // required and invalid
+$input-padding: 8px 12px 8px 0;
+$input-placeholder: $gray-300;
+$input-radio-checkbox-size: 24px;
+$input-radius: 0;
+
+/* default setting for input, textarea, select -------------------- */
+@mixin input($height: 40px) {
+  height: $height;
+  border-radius: $input-radius;
+  border: none;
+  border-bottom: solid 1px $gray-900;
+  padding: $input-padding;
+  color: $black;
+  &:hover,
+  &:focus {
+    border: none;
+    border-bottom: solid 1px $pink-500;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+  &::placeholder {
+    color: $input-placeholder;
+  }
+  &:disabled,
+  &.disabled {
+    background-color: $gray-300;
+    border-color: $gray-300;
+    color: $black;
+    -webkit-text-fill-color: $black; // for safari
+  }
+}
+
+// clears the 'X' from Internet Explorer
+input::-ms-clear {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+// clears type = number arrow
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+// clears type = number arrow
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+// select::-ms-expand {
+//   display: none;
+// }
+
+/* bootstrap: label -------------------- */
+.form-label {
+  margin-bottom: 0.5rem;
+}
+.col-form-label {
+  padding-top: calc(0.35rem + 1px);
+  padding-bottom: calc(0.35rem + 1px);
+}
+
+/* bootstrap: original input -------------------- */
+input,
+input.form-control {
+  @include input();
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+  }
+}
+
+/* bootstrap: textarea -------------------- */
+textarea,
+textarea.form-control {
+  @include input(auto);
+  width: 100%;
+  // max-width: none;
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+  }
+}
+
+/* bootstrap: select -------------------- */
+select,
+.form-select {
+  @include input();
+  // appearance: none;
+  text-overflow: ellipsis;
+}
+
+.input-group {
+  .bs-select {
+    width: 100%;
+    .select-placeholder {
+      color: $input-placeholder;
+    }
+    .dropdown {
+      &-toggle {
+        @include input(auto);
+        @include flex(space-between, top);
+        text-align: left;
+        margin: 0;
+        width: 100%;
+        &::after {
+          vertical-align: middle;
+        }
+      }
+      &-item {
+        padding: $input-padding;
+        font-weight: normal;
+        &:hover {
+          background-color: $gray-200;
+        }
+        &.active {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+/* required -------------------- */
+.required {
+  &label,
+  &.col-form-label,
+  &.legend {
+    &::after {
+      content: "*";
+      color: $input-red-color;
+    }
+  }
+}
+
+/* invalid -------------------- */
+.invalid {
+  &-feedback {
+    @include text($size: 13px, $color: $input-red-color);
+    margin-top: 4px;
+    width: 100%;
+    display: none;
+  }
+  input,
+  textarea,
+  .form-control {
+    border-color: $input-red-color;
+    &:focus,
+    &:hover:focus,
+    &:hover {
+      border-color: $input-red-color;
+    }
+  }
+  select,
+  .form-select,
+  .bs-select .select-wrapper,
+  .bs-select .select-wrapper:hover,
+  .bs-select .select-wrapper:focus {
+    border-color: $input-red-color;
+  }
+  .invalid-feedback {
+    display: block;
+  }
+  .form-check-label {
+    color: $input-red-color;
+  }
+}
+
+/* form-text -------------------- */
+.form-text {
+  @include text($size: 13px, $color: $gray-300);
+  margin-top: 4px;
+}

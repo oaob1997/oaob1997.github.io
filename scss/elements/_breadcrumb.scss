@@ -1,0 +1,25 @@
+// .breadcrumb {
+//   background-color: transparent;
+//   padding: 10px 0px;
+//   margin-bottom: 0;
+//   &-item {
+//     @include text($size: 13px, $color: $gray-400);
+//     display: flex;
+//     align-items: center;
+//     + .breadcrumb-item {
+//       padding-left: 4px;
+//       &::before {
+//         content: ">";
+//         display: block;
+//         margin-right: 4px;
+//         padding-right: 0;
+//       }
+//     }
+//     a {
+//       color: inherit;
+//       &:hover {
+//         color: $gray-400;
+//       }
+//     }
+//   }
+// }

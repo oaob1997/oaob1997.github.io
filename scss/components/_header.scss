@@ -1,0 +1,32 @@
+/* <header> -------------------- */
+
+/* header > logo -------------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  &-inner {
+    padding: 0px 30px;
+  }
+  &::before,
+  &::after {
+    @include pseudo();
+    flex: 1;
+    height: 160px;
+    background-repeat: repeat-x;
+    background-size: auto 160px;
+  }
+  &::before {
+    background-position: right;
+    background-image: url(../images/header-flag-left.png);
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(../images/header-flag-left@2x.png);
+    }
+  }
+  &::after {
+    background-position: left;
+    background-image: url(../images/header-flag-right.png);
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(../images/header-flag-right@2x.png);
+    }
+  }
+}

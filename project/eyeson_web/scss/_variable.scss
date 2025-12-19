@@ -1,0 +1,151 @@
+$black: #333333;
+
+$blue-100: #f0f4ff;
+$blue-500: #124098;
+
+$bluegray-100: #eff1f5;
+$bluegray-200: #dce4f1;
+
+$purple-100: #f7f5fa;
+$purple-200: #f0ebf5;
+$purple-300: #a494e1;
+$purple-500: #6b52c7;
+$purple-800: #361f89;
+
+$green-300: #c7f0df;
+$green-500: #43cd94;
+$green-700: #20bc7c;
+
+$gray-150: #e7e7e7;
+$gray-200: #c9c9c9;
+$gray-400: #c8c8c8;
+$gray-500: #6a6a6a;
+$gray-600: #4f4f4f;
+$gray-900: #242424;
+
+$pink-500: #e6266e;
+$pink-600: #d11058;
+
+$red-500: #ee5d5d;
+
+/* font 請依照專案需求進行調整 */
+//Roboto
+// @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Prompt:wght@300&family=Roboto:wght@300;400;500;700&family=Rubik&display=swap");
+//思源黑體 Noto Sans TC
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Prompt:wght@300&family=Rubik:wght@600;700&display=swap");
+
+$font-family: "PingFangTC", "Noto Sans TC", "微軟正黑體", "Microsoft JhengHei",
+  "Rubik";
+$text-bold: 600;
+
+/* radius */
+$radius: 10px;
+
+/* ------- media query ------- */
+
+$width-xs: 360px;
+$width-sm: 576px;
+$width-md: 768px;
+$width-lg: 992px;
+$width-xl: 1200px;
+$width-xxl: 1400px;
+$width-xxxl: 2000px;
+
+$breakpoints: (
+  "xs": $width-xs,
+  "sm": $width-sm,
+  "md": $width-md,
+  "lg": $width-lg,
+  "xl": $width-xl,
+  "xxl": $width-xxl,
+  "xxxl": $width-xxxl,
+);
+
+@mixin media-breakpoint-down($width) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width) - 0.02;
+    @media (max-width: $width) {
+      @content;
+    }
+  } @else {
+    @error "breakpoint `#{$width}` not found in `#{$breakpoints}`";
+  }
+}
+@mixin media-breakpoint-up($width) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    $current: ceil($width);
+    @media (min-width: $current) {
+      @content;
+    }
+  } @else {
+    @error "breakpoint `#{$width}` not found in `#{$breakpoints}`";
+  }
+}
+@mixin media-breakpoint-only($width) {
+  @if map_has_key($breakpoints, $width) {
+    $breakpoint-names: map-keys($breakpoints);
+    $n: index($breakpoint-names, $width);
+    $current: map_get($breakpoints, $width);
+    $next: null;
+    @if $n == length($breakpoints) {
+      $next: null;
+    } @else {
+      $next: map_get($breakpoints, nth($breakpoint-names, $n + 1)) - 0.02;
+    }
+
+    @if $next {
+      @media (min-width: $current) and (max-width: $next) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $current) {
+        @content;
+      }
+    }
+  } @else {
+    @error "breakpoint `#{$width}` not found in `#{$breakpoints}`";
+  }
+}
+
+/* ------- mixins ------- */
+
+/* size */
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/* pseudo */
+@mixin pseudo($display: block, $content: "") {
+  content: $content;
+  display: $display;
+}
+
+/* 置中 */
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+@mixin flex($j: null, $a: null) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+
+/* 動畫效果 */
+@mixin tran($ani-speed: 0.3s, $ani-delay: null, $ani-property: all) {
+  transition-duration: $ani-speed;
+  transition-property: $ani-property;
+  transition-delay: $ani-delay;
+}
+
+/* text */
+@mixin text($size: null, $weight: null, $color: null) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}

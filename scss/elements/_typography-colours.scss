@@ -1,0 +1,85 @@
+.bg {
+  &-light-blue {
+    background-color: $blue-500;
+  }
+  &-blue {
+    background-color: $blue-500;
+  }
+  &-red {
+    background-color: $red-500;
+  }
+  &-black {
+    background-color: $black;
+  }
+  &-white {
+    background-color: #fff;
+  }
+  &-gray {
+    background-color: $gray-500;
+  }
+}
+
+.text {
+  &-black {
+    background-color: $black;
+  }
+  &-gray {
+    background-color: $gray-500;
+  }
+  &-blue {
+    background-color: $blue-500;
+  }
+  &-white {
+    background-color: #fff;
+  }
+}
+
+h1,
+.h1 {
+  @include text($size: 35px, $weight: $text-bold);
+  margin: 0;
+}
+
+h2,
+.h2 {
+  @include text($size: 28px, $weight: $text-bold);
+  margin: 0;
+}
+
+h3,
+.h3 {
+  @include text($size: 24px);
+  margin: 0;
+}
+
+h4,
+.h4 {
+  @include text($size: 20px, $weight: $text-bold);
+  margin: 0;
+}
+
+h5,
+.h5 {
+  @include text($size: 18px);
+  margin: 0;
+}
+
+h6,
+.h6 {
+  @include text($size: 16px, $weight: $text-bold);
+  margin: 0;
+}
+
+a,
+.btn-link {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+.icon {
+  display: inline-block;
+}
