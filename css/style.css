@@ -1972,6 +1972,7 @@ body {
 }
 .advantage-section .sec-title {
   position: relative;
+  z-index: 1;
 }
 .advantage-section .sec-title::before {
   content: "";
