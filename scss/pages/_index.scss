@@ -323,6 +323,8 @@ body {
   position: relative;
   margin-top: -80px;
   padding-bottom: 70px;
+  max-width: 1920px;
+  margin-left: auto;
   z-index: 2;
   &::before {
     content: "";
@@ -353,22 +355,31 @@ body {
   .sec-text {
     font-weight: 400;
     font-size: 20px;
-    line-height: 3;
+    line-height: 2.6;
     width: 80%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 30px;
+    padding: 0 12px;
     color: $gray-700;
     background-image: repeating-linear-gradient(
       transparent,
-      transparent calc(3em - 1px),
-      /* 頂部從透明開始 */ #ccc calc(3em - 1px),
-      /* 保持透明直到行高 (這裡用 3em 舉例) 減 1px */ #ccc 3em
+      transparent calc(2.6em - 1px),
+      /* 頂部從透明開始 */ #ccc calc(2.6em - 1px),
+      /* 保持透明直到行高 (這裡用 3em 舉例) 減 1px */ #ccc 2.6em
         /* 灰色線持續到行高結束 */ /* 在行高快結束時畫 1px 灰色線 */
     );
-    background-size: 100% 3em; /* 2em 必須與 line-height 對應 */
+    background-size: 100% 2.6em; /* 2em 必須與 line-height 對應 */
     &__wrap {
       padding-left: 100px;
+    }
+    &__sub {
+      color: #8b6d54;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    &__bullet {
+      list-style: disc;
     }
   }
   @media (min-width: 1600px) {
@@ -392,7 +403,7 @@ body {
     }
     .sec-text {
       width: 90%;
-      padding: 0 20px;
+      padding: 0;
     }
   }
   @include media-breakpoint-down(lg) {
@@ -401,14 +412,13 @@ body {
     }
     .sec-text {
       width: 80%;
-      padding: 0 20px;
     }
   }
   @include media-breakpoint-down(md) {
     padding-bottom: 90px;
     &::before {
       width: 121%;
-      background-position: bottom left -70px;
+      background-position: bottom left -40px;
     }
     &::after {
       background-size: 150%;
@@ -434,16 +444,15 @@ body {
     }
     .sec-text {
       width: 90%;
-      padding: 0 10px;
       font-size: 16px;
-      line-height: 2.5;
+      line-height: 2;
       background-image: repeating-linear-gradient(
         transparent,
-        transparent calc(2.5em - 1px),
-        #ccc calc(2.5em - 1px),
-        #ccc 2.5em
+        transparent calc(2em - 1px),
+        #ccc calc(2em - 1px),
+        #ccc 2em
       );
-      background-size: 100% 2.5em;
+      background-size: 100% 2em;
       &__wrap {
         padding: 0;
       }
@@ -702,35 +711,47 @@ body {
         padding-top: 80px;
       }
       &:nth-child(2n) {
-        padding-top: 37%;
+        padding-top: 42%;
       }
 
       &:nth-child(2) {
-        padding-top: 47%;
+        padding-top: 52%;
       }
     }
     .works-title {
       display: flex;
       align-items: center;
-      padding-left: 10px;
       span {
         font-family: "sketchnote-square", sans-serif;
         font-size: 50px;
         color: white;
       }
       .title-sub {
-        font-size: 0;
+        // font-size: 0;
         padding-left: 10px;
+        padding-bottom: 10px;
         p {
-          font-size: 18px;
+          font-size: 22px;
           font-weight: 500;
-          margin-bottom: 0;
+          margin-bottom: 4px;
           color: white;
         }
         span {
           font-family: "Expletus Sans", sans-serif;
           font-size: 15px;
           color: $brown-50;
+        }
+        &__tag {
+          display: flex;
+          align-items: center;
+          column-gap: 4px;
+          .skill-tag {
+            font-size: 13px;
+            color: #d8bda7;
+            padding: 4px 8px;
+            border-radius: 8px;
+            background-color: #65503f;
+          }
         }
       }
     }
@@ -814,41 +835,56 @@ body {
         padding-bottom: 80px;
       }
     }
+    &.app-wrap {
+      .works-box:nth-child(2n-1) {
+        padding-top: 6%;
+      }
+    }
     @include media-breakpoint-down(xl) {
       &::before {
         display: none;
       }
       .works-box:nth-child(2n) {
-        padding-top: 60px;
+        padding-top: 100px;
       }
       .works-box:nth-child(2n-1) {
-        padding-top: 60px;
+        padding-top: 100px;
       }
       .works-box:first-child {
-        padding-top: 50px;
-      }
-    }
-    @include media-breakpoint-down(lg) {
-      .works-box:nth-child(2n) {
-        padding-top: 50px;
-      }
-      .works-box:nth-child(2n-1) {
-        padding-top: 50px;
-      }
-    }
-    @include media-breakpoint-down(md) {
-      .works-box:nth-child(2n) {
         padding-top: 70px;
       }
-      .works-box:nth-child(2n-1) {
-        padding-top: 70px;
+      &.app-wrap {
+        .works-box:nth-child(2n-1) {
+          padding-top: 100px;
+        }
       }
-      &:first-child {
+      &.draw-wrap {
         .works-box:first-child {
-          padding-top: 40px;
+          padding-top: 100px;
         }
       }
     }
+    // @include media-breakpoint-down(lg) {
+    //   .works-box:nth-child(2n) {
+    //     padding-top: 50px;
+    //   }
+    //   .works-box:nth-child(2n-1) {
+    //     padding-top: 50px;
+    //   }
+    // }
+    // @include media-breakpoint-down(md) {
+    //   .works-box:nth-child(2n) {
+    //     padding-top: 70px;
+    //   }
+    //   .works-box:nth-child(2n-1) {
+    //     padding-top: 70px;
+    //   }
+    //   &:first-child {
+    //     .works-box:first-child {
+    //       padding-top: 40px;
+    //     }
+    //   }
+    // }
     @include media-breakpoint-down(sm) {
       .works-title .title-sub {
         p {
@@ -861,6 +897,22 @@ body {
       &:first-child {
         .works-box:first-child {
           padding-top: 30px;
+        }
+      }
+      .works-box:nth-child(2n) {
+        padding-top: 70px;
+      }
+      .works-box:nth-child(2n-1) {
+        padding-top: 70px;
+      }
+      &.app-wrap {
+        .works-box:nth-child(2n-1) {
+          padding-top: 70px;
+        }
+      }
+      &.draw-wrap {
+        .works-box:first-child {
+          padding-top: 70px;
         }
       }
     }
