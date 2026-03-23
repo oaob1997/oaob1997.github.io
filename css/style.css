@@ -1475,6 +1475,7 @@ body {
   padding-bottom: 10px;
   position: relative;
   font-size: 35px;
+  z-index: 1;
 }
 .sec-title h2::before {
   content: "";
@@ -2102,6 +2103,7 @@ body {
   position: relative;
   height: 600px;
   margin-top: 80px;
+  z-index: 1;
 }
 .works-section .my-works {
   width: 60%;
