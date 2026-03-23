@@ -3,7 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 9999 !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   @include media-breakpoint-down(lg) {
     top: 0;
     left: 0;
