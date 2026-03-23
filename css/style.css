@@ -1972,7 +1972,7 @@ body {
 }
 .advantage-section .sec-title {
   position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 .advantage-section .sec-title::before {
   content: "";
@@ -2104,7 +2104,7 @@ body {
   position: relative;
   height: 600px;
   margin-top: 80px;
-  z-index: 1;
+  z-index: -1;
 }
 .works-section .my-works {
   width: 60%;
