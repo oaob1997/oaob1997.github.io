@@ -570,7 +570,7 @@ body {
   display: flex;
   background-color: $brown-500;
   position: relative;
-  height: 600px;
+  height: 650px;
   margin-top: 80px;
   z-index: 1;
 
@@ -683,11 +683,11 @@ body {
   }
   .works-content {
     width: 60%;
-    padding-right: 100px;
+    padding-right: 40px;
     max-height: 100%;
     overflow-y: scroll;
     &::-webkit-scrollbar {
-      width: 32px;
+      width: 40px;
     }
 
     &::-webkit-scrollbar-track {
@@ -695,7 +695,7 @@ body {
     }
     &::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0.5);
-      border: 12px solid transparent;
+      border: 16px solid transparent;
       background-clip: padding-box;
       border-radius: 32px;
     }
