@@ -1205,7 +1205,7 @@ select:disabled, select.disabled,
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999 !important;
+  z-index: 1000;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
