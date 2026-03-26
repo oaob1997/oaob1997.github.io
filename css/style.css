@@ -2230,17 +2230,16 @@ body {
   overflow-y: scroll;
 }
 .works-section .works-content::-webkit-scrollbar {
-  width: 6px;
+  width: 32px;
 }
 .works-section .works-content::-webkit-scrollbar-track {
   background: transparent;
 }
 .works-section .works-content::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-.works-section .works-content::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 12px solid transparent;
+  background-clip: padding-box;
+  border-radius: 32px;
 }
 .works-section .works-web-wrap {
   border-left: solid 1px #c3a891;
@@ -2426,7 +2425,7 @@ body {
 }
 @media (max-width: 575.98px) {
   .works-section .works-web-wrap .works-title .title-sub p {
-    font-size: 16px;
+    font-size: 20px;
   }
   .works-section .works-web-wrap .works-title .title-sub span {
     font-size: 13px;
@@ -2511,6 +2510,7 @@ body {
   .works-section .works-content {
     width: 100%;
     padding-left: 30px;
+    padding-right: 0;
   }
   .works-section .works-left {
     -webkit-box-ordinal-group: 3;

@@ -687,22 +687,17 @@ body {
     max-height: 100%;
     overflow-y: scroll;
     &::-webkit-scrollbar {
-      width: 6px; // 設定細細的一條，比較優雅
+      width: 32px;
     }
 
-    // 3. 設定 Scrollbar 的軌道 (底色)
     &::-webkit-scrollbar-track {
-      background: transparent; // 軌道透明，才不會擋住妳美美的米色背景
+      background: transparent;
     }
-
-    // 4. 設定滑動塊 (那條可以拉的桿子)
     &::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, 0.1); // 淡淡的黑色半透明
-      border-radius: 10px; // 兩頭圓角
-
-      &:hover {
-        background: rgba(0, 0, 0, 0.2); // 滑鼠移上去時稍微變深
-      }
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 12px solid transparent;
+      background-clip: padding-box;
+      border-radius: 32px;
     }
   }
   .works-web-wrap {
@@ -906,7 +901,7 @@ body {
     @include media-breakpoint-down(sm) {
       .works-title .title-sub {
         p {
-          font-size: 16px;
+          font-size: 20px;
         }
         span {
           font-size: 13px;
@@ -994,6 +989,7 @@ body {
     .works-content {
       width: 100%;
       padding-left: 30px;
+      padding-right: 0;
     }
     .works-left {
       order: 2;
