@@ -687,7 +687,22 @@ body {
     max-height: 100%;
     overflow-y: scroll;
     &::-webkit-scrollbar {
-      display: none;
+      width: 6px; // 設定細細的一條，比較優雅
+    }
+
+    // 3. 設定 Scrollbar 的軌道 (底色)
+    &::-webkit-scrollbar-track {
+      background: transparent; // 軌道透明，才不會擋住妳美美的米色背景
+    }
+
+    // 4. 設定滑動塊 (那條可以拉的桿子)
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.1); // 淡淡的黑色半透明
+      border-radius: 10px; // 兩頭圓角
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.2); // 滑鼠移上去時稍微變深
+      }
     }
   }
   .works-web-wrap {
