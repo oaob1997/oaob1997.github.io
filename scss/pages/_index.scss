@@ -1112,6 +1112,15 @@ body {
 
 .modal {
   padding: 20px;
+  max-width: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  @media (min-width: 1600px) {
+    max-width: 1500px;
+  }
+  @include media-breakpoint-down(sm) {
+    max-width: 100%;
+  }
 }
 .modal-dialog {
   max-width: 100%;
